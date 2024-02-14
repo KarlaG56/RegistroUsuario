@@ -1,7 +1,7 @@
 from UserManagement.Domain.Entity.User import User
-from UserManagement.Infrestructure.Service.EmailPort import EmailPort
+from UserManagement.Infrestructure.Service.EmailPort import PortEmail
 
-class Email(EmailPort):
+class Email(PortEmail):
 
     def run(self, user: User) -> None:
         try:

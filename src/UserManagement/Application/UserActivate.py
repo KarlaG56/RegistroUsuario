@@ -1,9 +1,9 @@
 from typing import Union
 from UserManagement.Domain.Entity.User import User
-from UserManagement.Domain.Port.UserPort import UserPort
+from UserManagement.Domain.Port.UserPort import PortUser
 
 class ActivateUserUseCase:
-    def __init__(self, repository: UserPort):
+    def __init__(self, repository: PortUser):
         self.repository = repository
 
     def run(self, token: str) -> Union[User, None]:

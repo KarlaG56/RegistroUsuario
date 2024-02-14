@@ -1,6 +1,6 @@
 from typing import Any
 
-from UserManagement.Domain.Entity.User import User
+from src.UserManagement.Domain.Entity.User import User
 from abc import ABC, abstractmethod
 
 

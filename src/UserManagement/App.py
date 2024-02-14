@@ -1,6 +1,6 @@
 from flask import Flask
-from UserManagement.Infrestructure.Route.UserRoutes import user_blueprint
-from Database.SQL import crear
+from src.UserManagement.Infraestructure.Route.UserRoute import user_blueprint
+from src.Database.SQL import crear
 
 app = Flask(__name__)
 
