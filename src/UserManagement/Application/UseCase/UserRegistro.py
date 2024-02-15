@@ -9,6 +9,6 @@ class RegisterUserUseCase:
 
     def run(self, name, lastname, cellphone, email, password) -> Union[User, None]:
         try:
-            return self.repository.register(name, lastname, cellphone, email, password)
+            return self.repository.create(name, lastname, cellphone, email, password)
         except Exception:
             return None

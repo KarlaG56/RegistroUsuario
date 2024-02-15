@@ -8,6 +8,6 @@ class ActivateUserUseCase:
 
     def run(self, token: str) -> Union[User, None]:
         try:
-            return self.repository.update_verified_at(self.repository.search_user_by_token(token).id)
+            return self.repository.verify(self.repository.by_token(token).id)
         except Exception as e:
             pass
