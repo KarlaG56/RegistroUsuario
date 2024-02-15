@@ -1,12 +1,10 @@
 from typing import Any
-
-from src.UserManagement.Domain.Entity.User import User
 from abc import ABC, abstractmethod
 
 
 class UserPort(ABC):
     @abstractmethod
-    def update_verified_at(self, user: User) -> Any: pass
+    def update_verified_at(self, id: str) -> Any: pass
 
     @abstractmethod
     def register(self, name: str, lastname: str, cellphone: str, email: str, password: str) -> Any: pass
