@@ -4,10 +4,11 @@ from src.UserManagement.Infraestructure.Controller.ActivarUserController import 
 from src.UserManagement.Application.UseCase.UserRegistro import RegisterUserUseCase
 from src.UserManagement.Application.UseCase.UserActivate import ActivateUserUseCase
 from src.UserManagement.Infraestructure.Repository.UserMySQLRepository import UserMySQLRepository
-from src.UserManagement.Infraestructure.Repository.UserMySQLRepository import User
+from src.UserManagement.Infraestructure.Repository.UserSQLiteRepository import UserSQLiteRepository
 
 user_blueprint = Blueprint('users', __name__)
 repository = UserMySQLRepository
+#repository = UserSQLiteRepository
 registroUserUseCase = RegisterUserUseCase(repository)
 registroUserController = RegisterUserController(registroUserUseCase)
 activarUserUseCase = ActivateUserUseCase(repository)

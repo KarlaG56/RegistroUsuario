@@ -10,5 +10,5 @@ class User:
         self.email = email
         self.password = bcrypt.hashpw(password.encode('utf8'), bcrypt.gensalt()).decode('utf8')
         self.cellphone = cellphone
-        self.activation_token = str(uuid.uuid4())
+        self.token = str(uuid.uuid4())
         self.activated_at = None

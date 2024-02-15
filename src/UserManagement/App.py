@@ -1,5 +1,6 @@
 from flask import Flask
 from src.UserManagement.Infraestructure.Route.UserRoute import user_blueprint
+from src.UserManagement.Infraestructure.Repository.Entity.UserSQLEntity import User
 
 app = Flask(__name__)
 

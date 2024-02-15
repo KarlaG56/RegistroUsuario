@@ -1,19 +1,20 @@
 from datetime import datetime
-from src.Database.MySQL import SessionLocal
+from src.Database.SQLite import SessionLocal
 from typing import Any
 from src.UserManagement.Domain.Port.PortUser import UserPort
 from src.UserManagement.Domain.Entity.User import User
 from src.UserManagement.Infraestructure.Repository.Entity.UserSQLEntity import User as Entidad
 
 
-class UserMySQLRepository(UserPort):
+class UserSQLiteRepository(UserPort):
     def __init__(self):
         self.session = SessionLocal
 
     def create(self, name: str, lastname: str, cellphone: str, email: str, password: str) -> Any:
         user = User(name, lastname, cellphone, email, password)
         entidad = Entidad(uuid=str(user.uuid), name=user.name, lastname=user.lastname, cellphone=user.cellphone,
-                          email=user.email, password=user.password, token=user.token, verified_at=user.activated_at)
+                          email=user.email, password=user.password, token=user.token,
+                          verified_at=user.activated_at)
         self.session.add(entidad)
         self.session.commit()
         return user
